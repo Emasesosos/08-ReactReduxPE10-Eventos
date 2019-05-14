@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Formulario from './Formulario';
+import Eventos from './Eventos';
 import Imagen from './Imagen';
 import './../css/App.css';
 
@@ -56,19 +57,27 @@ class App extends Component {
   render() {
     return(
       <div className="App">
-        { /* ***** Componente: Header ***** */}
+      
+        { /* ***** Componente: Header ***** */ }
         <Header
                 titulo='Eventos'
         ></Header>
-        { /* ***** Componente: Formulario ***** */}
+        
         <div className="uk-container">
+          { /* ***** Componente: Formulario ***** */ }
           <Formulario
                       categorias={this.state.categorias}
                       obtenerEventos={this.obtenerEventos}
-          ></Formulario>      
+          ></Formulario>
+          { /* ***** Componente: Eventos ***** */ }
+          <Eventos
+                    eventos={this.state.eventos}
+          ></Eventos> 
         </div>
-        { /* ***** Componente: Imagen ***** */}
+
+        { /* ***** Componente: Imagen ***** */ }
         <Imagen></Imagen>
+
       </div>
     )
   }
