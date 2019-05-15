@@ -6,4 +6,7 @@ ReactJS: Aplicación de Eventos con EventBrite API
 
 ## Dependencias
 
+### 'prop-types'
+'> npm install --save-dev prop-types'
+
 ## API: EventBrite API
