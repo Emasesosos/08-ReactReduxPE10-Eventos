@@ -1,8 +1,10 @@
 import React, { Component }  from 'react';
+import PropTypes from 'prop-types';
 
 class Evento extends Component {
     render() {
-        const { name, logo, description } = this.props.info; 
+        const { name, logo, description, url } = this.props.info; 
+        // console.log(this.props.info);
 
         if(!name) return null;
 
@@ -27,10 +29,18 @@ class Evento extends Component {
                         <h3 className="uk-card-title">{name.text}</h3>
                         <p>{desc}</p>
                     </div>
+
+                    <div className="uk-card-footer">
+                        <a className="uk-button uk-button-secondary" href={url} target="_blank" rel="noopener noreferrer">Más Información</a>
+                    </div>
                 </div>
             </div>
         )
     }
+}
+
+Evento.propTypes = {
+    info: PropTypes.object.isRequired,
 }
 
 export default Evento;
